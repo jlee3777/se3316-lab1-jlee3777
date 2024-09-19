@@ -1,29 +1,25 @@
-// Array containing the botanical names of the orchids
+// Array containing the botanical names of the orchids in the HTML file
 const orchidNames = [
     "Amerorchis rotundifolia",
     "Platanthera dilatata",
     "Calypso bulbosa",
-    "Cypripedium calceolus",
+    "Cypripedium candidum",
     "Spiranthes romanzoffiana",
-    "Corallorhiza maculata",
-    "Dactylorhiza fuchsii",
+    "Corallorhiza striata",
+    "Aplectrum hyemale",
+    "Arethusa bulbosa",
+    "Calopogon tuberosus",
+    "Cephalanthera austinae",
+    "Cypripedium acaule",
+    "Cypripedium parviflorum",
     "Epipactis helleborine",
     "Goodyera pubescens",
-    "Malaxis paludosa",
-    "Neottia cordata",
-    "Platanthera bifolia",
-    "Cypripedium parviflorum",
-    "Spiranthes cernua",
-    "Gymnadenia conopsea"
+    "Pogonia ophioglossoides"
 ];
 
 // Function to search for an orchid by name
 function searchOrchid() {
-    
-    // Get the value from the search box
     const query = document.getElementById('search-box').value.trim();
-
-    // Validate the input
     const validInput = /^[A-Za-z\s]+$/.test(query) && query.length <= 20;
 
     if (!validInput) {
@@ -31,11 +27,9 @@ function searchOrchid() {
         return;
     }
 
-    // Filter the array to find matches
     const matches = orchidNames.filter(name => name.toLowerCase().includes(query.toLowerCase()));
     const limitedMatches = matches.slice(0, 5);
 
-    // Display a popup with the matching botanical names
     if (limitedMatches.length > 0) {
         alert("Matches found:\n" + limitedMatches.join("\n"));
     } else {
@@ -43,20 +37,17 @@ function searchOrchid() {
     }
 }
 
-
 const orchidByProvince = {
-    "British Columbia": ["Platanthera dilatata", "Corallorhiza maculata", "Malaxis paludosa"],
-    "Alberta": ["Platanthera dilatata", "Corallorhiza maculata", "Cypripedium parviflorum", "Malaxis paludosa"],
-    "Saskatchewan": ["Cypripedium calceolus", "Corallorhiza maculata"],
-    "Manitoba": ["Cypripedium calceolus", "Cypripedium parviflorum"],
-    "Ontario": ["Amerorchis rotundifolia", "Cypripedium calceolus", "Goodyera pubescens", "Cypripedium parviflorum", "Spiranthes cernua"],
-    "Quebec": ["Amerorchis rotundifolia", "Goodyera pubescens", "Neottia cordata", "Spiranthes cernua"],
-    "New Brunswick": ["Spiranthes romanzoffiana", "Spiranthes cernua"],
-    "Nova Scotia": ["Spiranthes romanzoffiana", "Platanthera bifolia", "Epipactis helleborine"],
-    "Prince Edward Island": ["Spiranthes romanzoffiana", "Platanthera bifolia"],
-    "Newfoundland": ["Platanthera dilatata", "Neottia cordata", "Gymnadenia conopsea"],
-    "Yukon": ["Platanthera dilatata", "Calypso bulbosa"],
-    "Northwest Territories": ["Amerorchis rotundifolia"]
+    "British Columbia": ["Platanthera dilatata", "Corallorhiza striata", "Cephalanthera austinae"],
+    "Alberta": ["Platanthera dilatata", "Cypripedium parviflorum", "Corallorhiza striata"],
+    "Saskatchewan": ["Cypripedium candidum", "Cypripedium parviflorum", "Corallorhiza striata"],
+    "Manitoba": ["Cypripedium candidum", "Cypripedium parviflorum", "Corallorhiza striata"],
+    "Ontario": ["Amerorchis rotundifolia", "Cypripedium candidum", "Aplectrum hyemale", "Arethusa bulbosa", "Calopogon tuberosus", "Cypripedium acaule", "Goodyera pubescens", "Epipactis helleborine", "Pogonia ophioglossoides"],
+    "Quebec": ["Amerorchis rotundifolia", "Goodyera pubescens", "Arethusa bulbosa", "Calopogon tuberosus", "Epipactis helleborine", "Pogonia ophioglossoides"],
+    "New Brunswick": ["Spiranthes romanzoffiana", "Arethusa bulbosa"],
+    "Nova Scotia": ["Spiranthes romanzoffiana", "Platanthera dilatata", "Calopogon tuberosus"],
+    "Prince Edward Island": ["Spiranthes romanzoffiana"],
+    "Newfoundland": ["Platanthera dilatata", "Calypso bulbosa", "Pogonia ophioglossoides"]
 };
 
 // Function to display orchids by province
