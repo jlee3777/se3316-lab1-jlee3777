@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SE 3316 Lab1</title>
+    <meta name = "description" content = "SE3316 Lab1: Orchid Information">
+    <meta name = "author" content = "James Lee">
+
+    <link rel="stylesheet" href="lab1.css"> <!-- link to CSS file -->
+    <script type="text/javascript" src="lab1.js"></script> <!-- link to external JS file -->
+</head>
+<body>
+
+    <h1>List of Orchid Plants</h1>
+
+    <!-- Search Box -->
+    <div class="search-container">
+        <input type="text" id="search-box" placeholder="Search by Botanical Name" maxlength="20">
+        <button onclick="searchOrchid()">Search</button>
+    </div>
+
+    <!-- province dropdown -->
+    <div class="dropdown-container">
+        <label for="province-dropdown">Select a Province:</label>
+        <select id="province-dropdown" onchange="showOrchidsByProvince()">
+            <option value="">-- Select a Province --</option>
+            <option value="British Columbia">British Columbia</option>
+            <option value="Alberta">Alberta</option>
+            <option value="Saskatchewan">Saskatchewan</option>
+            <option value="Manitoba">Manitoba</option>
+            <option value="Ontario">Ontario</option>
+            <option value="Quebec">Quebec</option>
+            <option value="New Brunswick">New Brunswick</option>
+            <option value="Nova Scotia">Nova Scotia</option>
+            <option value="Prince Edward Island">Prince Edward Island</option>
+            <option value="Newfoundland">Newfoundland</option>
+            <option value="Yukon">Yukon</option>
+            <option value="Northwest Territories">Northwest Territories</option>
+        </select>
+    </div>
+
+    <!-- Orchid List -->
+    <ul class="orchid-list">
+        <li class="orchid-item">
+            <h2>Amerorchis rotundifolia</h2>
+            <img src="images/amerorchis.jpg" alt="Amerorchis rotundifolia">
+            <p>Other Names: Small Round Leaved Orchis</p>
+            <p>Location: Ontario, Quebec, Manitoba</p>
+            <p>Flowering Season: June to July</p>
+            <a href="https://en.wikipedia.org/wiki/Amerorchis_rotundifolia" target="_blank">More Info</a>
+        </li>
+
+        <li class="orchid-item">
+            <h2>Platanthera dilatata</h2>
+            <img src="images/platanthera.jpg" alt="Platanthera dilatata">
+            <p>Other Names: White Bog Orchid</p>
+            <p>Location: British Columbia, Alberta, Yukon</p>
+            <p>Flowering Season: July to August</p>
+            <a href="https://en.wikipedia.org/wiki/Platanthera_dilatata" target="_blank">More Info</a>
+        </li>
+
+        <li class="orchid-item">
+            <h2>Calypso bulbosa</h2>
+            <img src="images/calypso.jpg" alt="Calypso bulbosa">
+            <p>Other Names: Fairy Slipper</p>
+            <p>Location: Yukon, British Columbia, Alberta</p>
+            <p>Flowering Season: May to June</p>
+            <a href="https://en.wikipedia.org/wiki/Calypso_bulbosa" target="_blank">More Info</a>
+        </li>
+
+        <li class="orchid-item">
+            <h2>Cypripedium calceolus</h2>
+            <img src="images/cypripedium.jpg" alt="Cypripedium calceolus">
+            <p>Other Names: Lady's Slipper Orchid</p>
+            <p>Location: Ontario, Manitoba, Saskatchewan</p>
+            <p>Flowering Season: May to July</p>
+            <a href="https://en.wikipedia.org/wiki/Cypripedium_calceolus" target="_blank">More Info</a>
+        </li>
+
+        <li class="orchid-item">
+            <h2>Spiranthes romanzoffiana</h2>
+            <img src="images/spiranthes.jpg" alt="Spiranthes romanzoffiana">
+            <p>Other Names: Hooded Ladies' Tresses</p>
+            <p>Location: Nova Scotia, Prince Edward Island, Newfoundland</p>
+            <p>Flowering Season: July to August</p>
+            <a href="https://en.wikipedia.org/wiki/Spiranthes_romanzoffiana" target="_blank">More Info</a>
+        </li>
+
+        <li class="orchid-item">
+            <h2>Corallorhiza maculata</h2>
+            <img src="images/corallorhiza.jpg" alt="Corallorhiza maculata">
+            <p>Other Names: Spotted Coralroot</p>
+            <p>Location: British Columbia, Alberta, Saskatchewan</p>
+            <p>Flowering Season: June to August</p>
+            <a href="https://en.wikipedia.org/wiki/Corallorhiza_maculata" target="_blank">More Info</a>
+        </li>
+
+        <li class="orchid-item">
+            <h2>Dactylorhiza fuchsii</h2>
+            <img src="images/dactylorhiza.jpg" alt="Dactylorhiza fuchsii">
+            <p>Other Names: Common Spotted Orchid</p>
+            <p>Location: Newfoundland, Quebec</p>
+            <p>Flowering Season: June to July</p>
+            <a href="https://en.wikipedia.org/wiki/Dactylorhiza_fuchsii" target="_blank">More Info</a>
+        </li>
+
+        <li class="orchid-item">
+            <h2>Epipactis helleborine</h2>
+            <img src="images/epipactis.jpg" alt="Epipactis helleborine">
+            <p>Other Names: Broad-leaved Helleborine</p>
+            <p>Location: Ontario, Quebec, Nova Scotia</p>
+            <p>Flowering Season: July to September</p>
+            <a href="https://en.wikipedia.org/wiki/Epipactis_helleborine" target="_blank">More Info</a>
+        </li>
+
+        <li class="orchid-item">
+            <h2>Goodyera pubescens</h2>
+            <img src="images/goodyera.jpg" alt="Goodyera pubescens">
+            <p>Other Names: Downy Rattlesnake Plantain</p>
+            <p>Location: Ontario, Quebec</p>
+            <p>Flowering Season: July to August</p>
+            <a href="https://en.wikipedia.org/wiki/Goodyera_pubescens" target="_blank">More Info</a>
+        </li>
+
+        <li class="orchid-item">
+            <h2>Malaxis paludosa</h2>
+            <img src="images/malaxis.jpg" alt="Malaxis paludosa">
+            <p>Other Names: Bog Adder's Mouth</p>
+            <p>Location: British Columbia, Alberta</p>
+            <p>Flowering Season: July to August</p>
+            <a href="https://en.wikipedia.org/wiki/Malaxis_paludosa" target="_blank">More Info</a>
+        </li>
+
+        <li class="orchid-item">
+            <h2>Neottia cordata</h2>
+            <img src="images/neottia.jpg" alt="Neottia cordata">
+            <p>Other Names: Heartleaf Twayblade</p>
+            <p>Location: Ontario, Quebec, Newfoundland</p>
+            <p>Flowering Season: June to July</p>
+            <a href="https://en.wikipedia.org/wiki/Neottia_cordata" target="_blank">More Info</a>
+        </li>
+
+        <li class="orchid-item">
+            <h2>Platanthera bifolia</h2>
+            <img src="images/platanthera_bifolia.jpg" alt="Platanthera bifolia">
+            <p>Other Names: Lesser Butterfly Orchid</p>
+            <p>Location: Nova Scotia, Newfoundland</p>
+            <p>Flowering Season: June to July</p>
+            <a href="https://en.wikipedia.org/wiki/Platanthera_bifolia" target="_blank">More Info</a>
+        </li>
+
+        <li class="orchid-item">
+            <h2>Cypripedium parviflorum</h2>
+            <img src="images/cypripedium_parviflorum.jpg" alt="Cypripedium parviflorum">
+            <p>Other Names: Yellow Lady's Slipper</p>
+            <p>Location: Alberta, Manitoba, Ontario</p>
+            <p>Flowering Season: May to July</p>
+            <a href="https://en.wikipedia.org/wiki/Cypripedium_parviflorum" target="_blank">More Info</a>
+        </li>
+
+        <li class="orchid-item">
+            <h2>Spiranthes cernua</h2>
+            <img src="images/spiranthes_cernua.jpg" alt="Spiranthes cernua">
+            <p>Other Names: Nodding Ladies' Tresses</p>
+            <p>Location: Ontario, Quebec, New Brunswick</p>
+            <p>Flowering Season: September to October</p>
+            <a href="https://en.wikipedia.org/wiki/Spiranthes_cernua" target="_blank">More Info</a>
+        </li>
+
+        <li class="orchid-item">
+            <h2>Gymnadenia conopsea</h2>
+            <img src="images/gymnadenia.jpg" alt="Gymnadenia conopsea">
+            <p>Other Names: Fragrant Orchid</p>
+            <p>Location: Newfoundland, Labrador, Quebec</p>
+            <p>Flowering Season: June to August</p>
+            <a href="https://en.wikipedia.org/wiki/Gymnadenia_conopsea" target="_blank">More Info</a>
+        </li>
+    </ul>
+
+ 
+</body>
+</html>
