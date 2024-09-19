@@ -1,0 +1,16 @@
+# ignore image
+images/
+
+# ignore log
+*.log
+*.tmp
+*.swp
+
+# ignore OS files
+.DS_Store    # macOS
+Thumbs.db    # Windows
+
+# ignore IDE settings
+.vscode/
+.idea/
+
