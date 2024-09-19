@@ -43,3 +43,36 @@ function searchOrchid() {
     }
 }
 
+
+const orchidByProvince = {
+    "British Columbia": ["Platanthera dilatata", "Corallorhiza maculata", "Malaxis paludosa"],
+    "Alberta": ["Platanthera dilatata", "Corallorhiza maculata", "Cypripedium parviflorum", "Malaxis paludosa"],
+    "Saskatchewan": ["Cypripedium calceolus", "Corallorhiza maculata"],
+    "Manitoba": ["Cypripedium calceolus", "Cypripedium parviflorum"],
+    "Ontario": ["Amerorchis rotundifolia", "Cypripedium calceolus", "Goodyera pubescens", "Cypripedium parviflorum", "Spiranthes cernua"],
+    "Quebec": ["Amerorchis rotundifolia", "Goodyera pubescens", "Neottia cordata", "Spiranthes cernua"],
+    "New Brunswick": ["Spiranthes romanzoffiana", "Spiranthes cernua"],
+    "Nova Scotia": ["Spiranthes romanzoffiana", "Platanthera bifolia", "Epipactis helleborine"],
+    "Prince Edward Island": ["Spiranthes romanzoffiana", "Platanthera bifolia"],
+    "Newfoundland": ["Platanthera dilatata", "Neottia cordata", "Gymnadenia conopsea"],
+    "Yukon": ["Platanthera dilatata", "Calypso bulbosa"],
+    "Northwest Territories": ["Amerorchis rotundifolia"]
+};
+
+// Function to display orchids by province
+function showOrchidsByProvince() {
+    const selectedProvince = document.getElementById('province-dropdown').value;
+
+    if (selectedProvince === "") {
+        alert("Please select a province.");
+        return;
+    }
+
+    const orchidsInProvince = orchidByProvince[selectedProvince];
+
+    if (orchidsInProvince && orchidsInProvince.length > 0) {
+        alert("Orchids found in " + selectedProvince + ":\n" + orchidsInProvince.join("\n"));
+    } else {
+        alert("No orchids found in " + selectedProvince + ".");
+    }
+}
