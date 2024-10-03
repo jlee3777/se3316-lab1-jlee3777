@@ -1,0 +1,152 @@
+
+/* Global body styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+}
+
+
+h1 {
+    text-align: center;
+    font-size: 2em;
+    color: #444;
+    margin-bottom: 30px;
+}
+
+
+/* Search Box Styling */
+.search-container {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+
+#search-box {
+    padding: 10px;
+    width: 250px;
+    font-size: 1em;
+}
+
+
+button {
+    padding: 10px 15px;
+    background-color: #0066cc;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+
+button:hover {
+    background-color: #004999;
+}
+
+
+/* Province Checkbox Styling */
+.province-checkboxes {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+
+.province-checkboxes label {
+    display: inline-block;
+    margin: 5px;
+    font-size: 1em;
+    color: #444;
+}
+
+
+/* Dynamic Search Results Styling */
+#search-results {
+    border: 2px solid #4CAF50;
+    background-color: #ffffff;
+    padding: 15px;
+    margin: 20px auto;
+    max-width: 800px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+/* Styling for each orchid item in dynamic search results */
+.orchid-item {
+    border-bottom: 1px solid #ddd;
+    padding: 15px 0;
+    margin-bottom: 15px;
+}
+
+
+.orchid-item:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+
+
+
+.orchid-item img {
+    width: 150px;
+    height: auto;
+    display: block;
+    margin-bottom: 10px;
+}
+
+
+
+
+.orchid-item h2 {
+    font-size: 1.5em;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+
+/* Style the paragraph */
+.orchid-item p {
+    font-size: 1em;
+    color: #555;
+    margin: 5px 0;
+}
+
+
+.orchid-item a {
+    color: #0066cc;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+
+.orchid-item a:hover {
+    text-decoration: underline;
+    color: #004999;
+}
+
+
+
+
+#search-results .orchid-item {
+    background-color: #fafafa;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+
+.orchid-item:hover {
+    background-color: #f0f0f0;
+    transition: background-color 0.3s ease;
+}
+
+
+
+
+#error-message {
+    color: red;
+    text-align: center;
+    margin-top: 10px;
+    font-size: 1.1em;
+}
