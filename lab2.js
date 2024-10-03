@@ -305,4 +305,26 @@ function updateSearchResults() {
 
 
 
+// Function to display an error message
+function displayError(message) {
+    let errorContainer = document.getElementById('error-message');
+    if (!errorContainer) {
+        errorContainer = document.createElement('div');
+        errorContainer.id = 'error-message';
+        errorContainer.style.color = 'red';
+        errorContainer.style.textAlign = 'center';
+        errorContainer.style.marginTop = '10px';
+        document.body.insertBefore(errorContainer, document.getElementById('search-results'));
+    }
+    errorContainer.textContent = message;
+}
+
+
+// Function to clear the error message
+function clearError() {
+    const errorContainer = document.getElementById('error-message');
+    if (errorContainer) {
+        errorContainer.textContent = '';
+    }
+}
 
