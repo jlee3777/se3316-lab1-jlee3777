@@ -195,3 +195,114 @@ const orchidData = [
 
 
 
+
+
+// Function to update search results from filters
+function updateSearchResults() {
+    const query = document.getElementById('search-box').value.trim().toLowerCase();
+    const checkedProvinces = Array.from(document.querySelectorAll('.province-checkboxes input:checked')).map(cb => cb.value);
+
+
+    // Error handling for invalid inputs
+    const validInputPattern = /^[a-z\s]*$/;
+    if (!validInputPattern.test(query)) {
+        displayError("Invalid input. Please use only letters and spaces.");
+        return;
+    } else {
+        clearError();
+    }
+
+
+    // Filter orchids
+    let filteredOrchids = orchidData.filter(orchid => {
+        return orchid.name.toLowerCase().includes(query) &&
+               orchid.location.some(province => checkedProvinces.includes(province));
+    });
+
+
+    // Get the search results
+    const resultsContainer = document.getElementById('search-results');
+
+
+    while (resultsContainer.firstChild) {
+        resultsContainer.removeChild(resultsContainer.firstChild);
+    }
+
+
+    // If there are matches, display
+    if (filteredOrchids.length > 0) {
+        filteredOrchids.forEach(orchid => {
+       
+            const orchidDiv = document.createElement('div');
+            orchidDiv.classList.add('orchid-item');
+
+
+            const orchidName = document.createElement('h2');
+            orchidName.textContent = orchid.name;
+            orchidDiv.appendChild(orchidName);
+   
+            const orchidImage = document.createElement('img');
+            orchidImage.src = orchid.image;
+            orchidImage.alt = orchid.name;
+            orchidDiv.appendChild(orchidImage);
+
+
+            const otherNames = document.createElement('p');
+            otherNames.textContent = `Other Names: ${orchid.otherNames}`;
+            orchidDiv.appendChild(otherNames);
+
+
+            const location = document.createElement('p');
+            location.textContent = `Location: ${orchid.location.join(', ')}`;
+            orchidDiv.appendChild(location);
+
+
+            const specificHabitat = document.createElement('p');
+            specificHabitat.textContent = `Specific Habitat: ${orchid.specificHabitat}`;
+            orchidDiv.appendChild(specificHabitat);
+
+
+            const floweringSeason = document.createElement('p');
+            floweringSeason.textContent = `Flowering Season: ${orchid.floweringSeason}`;
+            orchidDiv.appendChild(floweringSeason);
+
+
+            const description = document.createElement('p');
+            description.textContent = `Description: ${orchid.description}`;
+            orchidDiv.appendChild(description);
+
+
+            const comments = document.createElement('p');
+            comments.textContent = `Comments: ${orchid.comments}`;
+            orchidDiv.appendChild(comments);
+
+
+            const references = document.createElement('p');
+            references.textContent = `References: ${orchid.references}`;
+            orchidDiv.appendChild(references);
+
+
+            const moreInfoLink = document.createElement('a');
+            moreInfoLink.href = orchid.link;
+            moreInfoLink.target = "_blank";
+            moreInfoLink.textContent = "More Info";
+            orchidDiv.appendChild(moreInfoLink);
+            resultsContainer.appendChild(orchidDiv);
+        });
+
+
+
+
+        resultsContainer.style.display = 'block';
+    } else {
+       
+        resultsContainer.style.display = 'block';
+        const noResultsMessage = document.createElement('p');
+        noResultsMessage.textContent = "No results found. Try adjusting your search or filter options.";
+        resultsContainer.appendChild(noResultsMessage);
+    }
+}
+
+
+
+
